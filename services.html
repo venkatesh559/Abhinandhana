@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/png" href="assets/images/logo-top.png" /> <title>ABHINANDHANA-Services</title>
+    <meta name="description" content="www.abhinandhanamediaservices.com">
+    <meta name="keywords" content="abhinandhana ,media services,abhinandhana advertising agency">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    
+    <link rel="stylesheet" href="assets/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/select2.css">
+    
+
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+<style>
+	.table {
+ width: 100%;
+ max-width: 100%;
+ margin-bottom: 1rem;
+}
+.table th,
+.table td {
+ padding: 0.75rem;
+ vertical-align: top;
+ border-top: 1px solid #eceeef;
+}
+.table thead th {
+ vertical-align: bottom;
+ border-bottom: 2px solid #eceeef;
+}
+.table tbody + tbody {
+ border-top: 2px solid #eceeef;
+}
+.table .table {
+ background-color: #fff;
+}
+.table-sm th,
+.table-sm td {
+ padding: 0.3rem;
+}
+.table-bordered {
+ border: 1px solid #eceeef;
+}
+.table-bordered th,
+.table-bordered td {
+ border: 1px solid #eceeef;
+}
+.table-bordered thead th,
+.table-bordered thead td {
+ border-bottom-width: 2px;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+ background-color: rgba(0, 0, 0, 0.05);
+}
+.table-hover tbody tr:hover {
+ background-color: rgba(0, 0, 0, 0.075);
+}
+.table-active,
+.table-active > th,
+.table-active > td {
+ background-color: rgba(0, 0, 0, 0.075);
+}
+.table-hover .table-active:hover {
+ background-color: rgba(0, 0, 0, 0.075);
+}
+.table-hover .table-active:hover > td,
+.table-hover .table-active:hover > th {
+ background-color: rgba(0, 0, 0, 0.075);
+}
+.table-success,
+.table-success > th,
+.table-success > td {
+ background-color: #dff0d8;
+}
+.table-hover .table-success:hover {
+ background-color: #d0e9c6;
+}
+.table-hover .table-success:hover > td,
+.table-hover .table-success:hover > th {
+ background-color: #d0e9c6;
+}
+.table-info,
+.table-info > th,
+.table-info > td {
+ background-color: #d9edf7;
+}
+.table-hover .table-info:hover {
+ background-color: #c4e3f3;
+}
+.table-hover .table-info:hover > td,
+.table-hover .table-info:hover > th {
+ background-color: #c4e3f3;
+}
+.table-warning,
+.table-warning > th,
+.table-warning > td {
+ background-color: #fcf8e3;
+}
+.table-hover .table-warning:hover {
+ background-color: #faf2cc;
+}
+.table-hover .table-warning:hover > td,
+.table-hover .table-warning:hover > th {
+ background-color: #faf2cc;
+}
+.table-danger,
+.table-danger > th,
+.table-danger > td {
+ background-color: #f2dede;
+}
+.table-hover .table-danger:hover {
+ background-color: #ebcccc;
+}
+.table-hover .table-danger:hover > td,
+.table-hover .table-danger:hover > th {
+ background-color: #ebcccc;
+}
+.thead-inverse th {
+ color: #fff;
+ background-color: #292b2c;
+}
+.thead-default th {
+ color: #464a4c;
+ background-color: #eceeef;
+}
+.table-inverse {
+ color: #fff;
+ background-color: #292b2c;
+}
+.table-inverse th,
+.table-inverse td,
+.table-inverse thead th {
+ border-color: #fff;
+}
+.table-inverse.table-bordered {
+ border: 0;
+}
+.table-responsive {
+ display: block;
+ width: 100%;
+ overflow-x: auto;
+ -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.table-responsive.table-bordered {
+ border: 0;
+}
+}  
+
+
+
+</style>
+<style type="text/css">
+
+.bs-slider{
+    overflow: hidden;
+    max-height: 700px;
+    position: relative;
+    background: #000000;
+}
+.bs-slider:hover {
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+.bs-slider:active {
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+.bs-slider .bs-slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.bs-slider > .carousel-inner > .item > img,
+.bs-slider > .carousel-inner > .item > a > img {
+    margin: auto;
+    width: 100% !important;
+}
+
+/********************
+*****Slide effect
+**********************/
+
+.fade {
+    opacity: 1;
+}
+.fade .item {
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    left: 0 !important;
+    display: block !important;
+    -webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -ms-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 1s;
+}
+.fade .item:first-child {
+    top: auto;
+    position: relative;
+}
+.fade .item.active {
+    opacity: 1;
+    z-index: 2;
+    -webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -ms-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 1s;
+}
+
+
+
+
+
+
+/*---------- LEFT/RIGHT ROUND CONTROL ----------*/
+.control-round .carousel-control {
+    top: 47%;
+    opacity: 0;
+    width: 50px;
+    height: 45px;
+    z-index: 100;
+    color: #ffffff;
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    overflow: hidden;
+    line-height: 43px;
+    text-shadow: none;
+    position: absolute;
+    font-weight: normal;
+    background: transparent;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+}
+.control-round:hover .carousel-control{
+    opacity: 1;
+}
+.control-round .carousel-control.left {
+    left: 1%;
+}
+.control-round .carousel-control.right {
+    right: 1%;
+}
+.control-round .carousel-control.left:hover,
+.control-round .carousel-control.right:hover{
+    color: #fdfdfd;
+    background: rgba(0, 0, 0, 0.5);
+    border: 0px transparent;
+}
+.control-round .carousel-control.left>span:nth-child(1){
+    left: 45%;
+}
+.control-round .carousel-control.right>span:nth-child(1){
+    right: 45%;
+}
+
+
+
+
+
+/*---------- INDICATORS CONTROL ----------*/
+.indicators-line > .carousel-indicators{
+    right: 45%;
+    bottom: 3%;
+    left: auto;
+    width: 90%;
+    height: 20px;
+    font-size: 0;
+    overflow-x: auto;
+    text-align: right;
+    overflow-y: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+    white-space: nowrap;
+}
+.indicators-line > .carousel-indicators li{
+    padding: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgb(158, 158, 158);
+    text-indent: 0;
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    letter-spacing: 1px;
+    background: rgb(158, 158, 158);
+    -webkit-font-smoothing: antialiased;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 5px;
+    -webkit-transition: all 0.5s cubic-bezier(0.22,0.81,0.01,0.99);
+    transition: all 0.5s cubic-bezier(0.22,0.81,0.01,0.99);
+    z-index: 10;
+    cursor:pointer;
+}
+.indicators-line > .carousel-indicators li:last-child{
+    margin-right: 0;
+}
+.indicators-line > .carousel-indicators .active{
+    margin: 1px 5px 1px 1px;
+    box-shadow: 0 0 0 2px #fff;
+    background-color: transparent;
+    position: relative;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition: box-shadow 0.3s ease;
+    -o-transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+
+}
+.indicators-line > .carousel-indicators .active:before{
+    transform: scale(0.5);
+    background-color: #fff;
+    content:"";
+    position: absolute;
+    left:-1px;
+    top:-1px;
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/*---------- SLIDE CAPTION ----------*/
+.slide_style_left {
+    text-align: left !important;
+}
+.slide_style_right {
+    text-align: right !important;
+}
+.slide_style_center {
+    text-align: center !important;
+}
+
+.slide-text {
+    left: 0;
+    top: 25%;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    padding: 10px 85px;
+    
+}
+
+.slide-text > h1 {
+    
+    padding: 0;
+    color: #ffffff;
+    font-size: 70px;
+    font-style: normal;
+    line-height: 84px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    display: inline-block;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+.slide-text > p {
+    padding: 0;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    -webkit-animation-delay: 1.1s;
+    animation-delay: 1.1s;
+}
+.slide-text > a.btn-default{
+    color: #000;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    margin-right: 10px;
+    text-align: center;
+    padding: 17px 30px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: none;
+    text-transform: uppercase;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+}
+.slide-text > a.btn-primary{
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    margin-left: 10px;
+    text-align: center;
+    padding: 17px 30px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    background: #00bfff;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.slide-text > a:hover,
+.slide-text > a:active {
+    color: #ffffff;
+    background: #222222;
+    -webkit-transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+
+
+
+
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+@media (max-width: 991px) {
+    .slide-text h1 {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 20px;
+    }
+    .slide-text > p {
+
+        font-size: 18px;
+    }
+}
+
+
+/*---------- MEDIA 480px ----------*/
+@media  (max-width: 768px) {
+    .slide-text {
+        padding: 10px 50px;
+    }
+    .slide-text h1 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+    .slide-text > p {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .control-round .carousel-control{
+        display: none;
+    }
+
+}
+@media  (max-width: 480px) {
+    .slide-text {
+        padding: 10px 30px;
+    }
+    .slide-text h1 {
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+    .slide-text > p {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+    .slide-text > a.btn-default, 
+    .slide-text > a.btn-primary {
+        font-size: 10px;
+        line-height: 10px;
+        margin-right: 10px;
+        text-align: center;
+        padding: 10px 15px;
+    }
+    .indicators-line > .carousel-indicators{
+        display: none;
+    }
+
+}
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+  
+
+    <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar" id="probootstrap-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo-top.png" class="img-responsive"></a>
+        
+        <a class="navbar-brand" href="index.html">ABHINANDHANA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-menu" aria-controls="probootstrap-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="ion-navicon"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="probootstrap-menu">
+           <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="ceo.html">ceo</a></li>            
+            <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>            
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="clients.html">clients</a></li>
+            <li class="nav-item active"><a class="nav-link" href="services.html">Services</a></li>
+      <!--      <li class="nav-item"><a class="nav-link" href="team.html">team</a></li>   -->         
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+    
+
+    <section class="probootstrap-cover overflow-hidden relative"  style="background-image: url('assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5" id="section-home">
+      <div class="overlay">
+        
+      </div>
+    
+    </section>
+    <!-- END section -->
+   <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Third Slide -->
+                <div class="item active">
+
+                    <!-- Slide Background -->
+                    <img src="assets/images/services1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_left">
+                                <h1 data-animation="animated zoomInRight"></h1>
+                                <p data-animation="animated fadeInLeft"></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Second Slide -->
+               
+                <!-- End of Slide -->
+
+              
+                <!-- End of Slide -->
+
+
+            </div><!-- End of Wrapper For Slides -->
+
+            <!-- Left Control -->
+           
+
+        </div>
+
+
+
+          
+        </div>
+      
+    </section>
+  <!--  <section>
+   width="1422" height="442"   <div class="col-md-12 text-center mb-5 probootstrap-animate">
+            <h2 class="display-4 border-bottom probootstrap-section-heading">Services</h2>
+</section>-->
+
+  <section class="probootstrap_section" id="section-city-guides">
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h3 class=" border-bottom probootstrap-section-heading">NEWSPAPER / MAGAZINE ADVERTISEMENT</h3>
+          
+       
+ <p class="lead mb-4" align="justify">Despite the onslaught of online media, thousands of people still continue to read newspapers daily. The reading habit trend does not show any signs of decline and instead seems to be growing higher up. This is what makes newspaper and magazine an attractive choice for reaching the largest collection of people.
+
+A well-conceived powerful advertising campaign in regional newspapers with the right words and design layout has the power to target targeted geographic audience and influence them instantly. Further, print advertising offers a fast turnaround in a country like India and enables you to have the advertisement you want, in the section you want, within a few days.
+
+Abhinandana Media Services with its holistic approach and fully integrated capabilities, provides a range of quality newspaper / magazine advertisement solutions. Our ability to understand consumer behaviors can help you design and implement targeted advertisements for readers of popular newspapers.
+</p>
+
+
+      </div></div>
+        </div>
+
+
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h3 class="border-bottom probootstrap-section-heading">TELEVISION / RADIO ADVERTISEMENT</h3>
+         
+       
+ <p class="lead mb-4" align="justify">The great and unique thing about Television & Radio advertising is that you can target an audience which isn’t actively looking for your product or service, but you still get to attract their attention.
+
+A creative television and radio advertisement can achieve great results, provided the message is up-to-date and consistent. Further they are very efficient for they rely heavily on the fact that the audience is actively looking for your product or service.
+
+We at Abhinandana offer result-oriented innovative television and radio advertisement solutions that have seen the best results for our clients with a focused effort.
+
+Whether you’re a nascent, unbranded start-up or an established organization looking to advertise your product / service in a television advertisement, then look to us. We can take your requirement and amplify it with your message to your targeted audience. The aim is to express the campaign intentions creatively and effectively, prompting customer’s reactions.</p>
+             
+
+      </div> </div>
+        </div>
+
+
+
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h3 class=" border-bottom probootstrap-section-heading">TRANSIT MEDIA ADVERTISEMENT</h3>
+         
+
+          <p class="lead mb-4" align="justify">To reach out to everybody that matters, Transit advertising is the way to go.
+
+Described as placement of print ads on buses and other vehicles and in bus shelters and train stations, it has proved to be an effective advertising medium for reaching an audience of all ages, backgrounds and incomes. This way the advertisement reaches families and professionals in their vehicles, people shopping around or students walking around the campus and above all, tourists finding their way around the city.
+
+The greatest benefit of Transit Advertising is that you cannot ignore it nor can it be turned off like television. It reaches people driving and passengers no matter what they’re looking at or doing.
+
+With its large, colorful, innovative designs that demand attention, it offers flexibility of ad size and location while delivering a varied audience.
+
+Abhinandana Media Services provides a host of quality transit advertising services that will allow you to engage with audiences when they work, shop and play. Through creative and eye-catching advertisement design and content, our team will ensure large-scale opportunities for you to reach the right audience.
+
+If you plan on a transit advertisement, speak to us about placing an ad in a bus shelter or a moving bus or truck. We will ensure an advertisement that will use bright colors with simple ideas laced by a few words for effective advertising that will attract attention.</p>
+
+      </div> </div>
+        </div>
+       
+   <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h3 class=" border-bottom probootstrap-section-heading">BILLBOARD / HOARDING ADVERTISEMENT</h3>
+       
+        <p class="lead mb-4" align="justify">Billboard Advertising is an excellent way to gain visibility for your product / service or business profile and attract new customers. What better way can there be than reaching your customers when they are out and about with targeted roadside billboard / hoarding advertising.
+
+Abhinandana Media Services provides high-class billboard / hoarding advertising services that are innovative, powerful and cost-effective, using well designed and perfectly placed advertising. This in turn will help popularize the utility value or benefits of your product / service and connect your business with new as well as existing customers.
+
+If you’re looking to have a billboard / hoarding advertisement in a particular location, place or road, get in touch with our sales team who will then contact you to discuss your requirements.</p>
+
+
+      </div>
+       </div>
+        </div>
+</section>
+
+
+  		<section class="probootstrap_section" id="section-feature-testimonial">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-12 text-center mb-5 probootstrap-animate">
+           
+
+
+
+ <div class="row text-center mb-5 probootstrap-animate">
+   <div class="col-sm-4" style="background-color:">
+    
+  <h3 align="left">BRAND BUILDING</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Strategy</li>
+  <li class="list-group">Advertising</li>
+  <li class="list-group">Designing</li>
+  <li class="list-group">Media Planning &#038; Buying</li>
+  <li class="list-group">Social Media</li>
+</ul>
+
+</div>
+ <div class="col-sm-4" style="background-color:">
+    <div class="row text-center mb-5 probootstrap-animate">
+  <h3 align="left">ELECTRONIC MEDIA</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Television Commercials</li>
+  <li class="list-group">Radio Commercials</li>
+  <li class="list-group">Audio Visual Presentations</li>
+  <li class="list-group">Corporate Films</li>
+  <li class="list-group">3D Animation &#038; Visual Effects</li>
+</ul>
+</div>
+</div>
+ <div class="col-sm-4" style="background-color:">
+    <div class="row text-center mb-5 probootstrap-animate">
+  <h3 align="left">Print Media Production
+  </h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Newspaper</li>
+  <li class="list-group">Magzine</li>
+  <li class="list-group">Logo &#038; Mascot</li>
+  <li class="list-group">Illustrations &#038; Special Artwork</li>
+  <li class="list-group">Printing &#038; Allied Services</li>
+</ul>
+</div>
+</div>
+
+   </div>
+   <br/>
+
+    <div class="row">
+   <div class="col-sm-4" style="background-color:">
+    <div class=" text-center mb-5 probootstrap-animate">
+  <h3 align="left">Photography</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Advertising</li>
+  <li class="list-group">Commercial</li>
+  <li class="list-group">Industrial</li>
+  
+</ul>
+</div>
+</div>
+
+ <div class="col-sm-4 text-center mb-5 probootstrap-animate" style="background-color:">
+  <h3 align="left">PRESS MANAGEMENT</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Press Notes</li>
+  <li class="list-group">Press Releases</li>
+  <li class="list-group">Press Conferences</li>
+ 
+</ul>
+</div>
+
+ <div class="col-sm-4 text-center mb-5 probootstrap-animate" style="background-color:">
+  <h3 align="left">OUTDOOR MEDIA</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Hoardings</li>
+  <li class="list-group">Kiosks</li>
+  <li class="list-group">Bus Shelter</li>
+  <li class="list-group">Transit Ads</li>
+  
+</ul>
+</div>
+   </div>
+    </section>
+    <!-- END section -->
+
+    <footer class="probootstrap_section probootstrap-border-top">
+      <div class="container">
+        
+    <div class="row wow fdeInUp">
+      <div class="col-md-4 col-sm-4 col-xs-12"> 
+       <nav class="bottom-nav">
+          <ul align="left">
+            <li class="list-group"><a href="Privacy.html">Privacy Policy</a></li>
+            <li class="list-group"><a href="Disclaimer.html">Disclaimer</a></li>
+            </ul>
+        </nav>
+      </div>
+      <!--bottom nav-->
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        
+      </div>
+      <!--/bottom nav--> 
+      
+      <!--powered by-->
+      <div class="col-md-4 col-sm-4 col-xs-12">
+
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#"><i class="fa fa-twitter"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <a href="#"><i class="fa fa-facebook"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          
+       
+          <a href="#"><i class="fa fa-instagram"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+        
+      </div>
+      <!--/powered by--> 
+      
+    
+  </div>
+        <div class="row pt-5">
+          <div class="col-md-12 text-center">
+            <p class="probootstrap_font-14">&copy; 2018. All Rights Reserved. <br> Designed &amp; Developed by <a href="#" target="_blank">REDANTS-SITE</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="assets/js/jquery.min.js"></script>
+    
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+
+    <script src="assets/js/select2.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -202,12 +202,12 @@ a {
 .probootstrap-thumbnail {
   position: relative;
   display: block;
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease;
+  -webkit-transition: .5s all ease;
+  -o-transition: .5s all ease;
+  transition: .5s all ease;
   opacity: 1; }
   .probootstrap-thumbnail.sleep {
-    opacity: .5; }
+    opacity: .10; }
   .probootstrap-thumbnail img {
     position: relative;
     -webkit-transition: .3s all ease;
@@ -289,7 +289,7 @@ a {
   width: 100%; }
   .probootstrap-section-half .probootstrap-image,
   .probootstrap-section-half .probootstrap-text {
-    width: 50%; }
+    width: 100%; }
     @media (max-width: 991px) {
       .probootstrap-section-half .probootstrap-image,
       .probootstrap-section-half .probootstrap-text {
@@ -306,8 +306,45 @@ a {
           padding: 3em; } }
       @media (max-width: 991px) {
         .probootstrap-section-half .probootstrap-text .probootstrap-inner {
-          padding-left: 15px;
-          padding-right: 15px; } }
+          padding-left: 20px;
+          padding-right: 20px; } }
+
+
+
+
+
+
+.probootstrap-section-half1 {
+  float: left;
+  width: 100%; }
+  .probootstrap-section-half1 .probootstrap-image,
+  .probootstrap-section-half1 .probootstrap-text1 {
+    width: 100%; }
+    @media (max-width: 991px) {
+      .probootstrap-section-half1 .probootstrap-image,
+      .probootstrap-section-half1 .probootstrap-text1 {
+        width: 100%; } }
+  @media (max-width: 767px) {
+    .probootstrap-section-half1 .probootstrap-image {
+      height: 400px; } }
+  .probootstrap-section-half1 .probootstrap-text1 {
+    background: #ECECEC; }
+    .probootstrap-section-half1 .probootstrap-text1 .probootstrap-inner1 {
+      padding: 2em; }
+      @media (max-width: 991px) {
+        .probootstrap-section-half1 .probootstrap-text1 .probootstrap-inner1 {
+          padding: 3em; } }
+      @media (max-width: 991px) {
+        .probootstrap-section-half1 .probootstrap-text1 .probootstrap-inner1 {
+          padding-left: 20px;
+          padding-right: 20px; } }
+
+
+
+
+
+
+
 
 .probootstrap_section {
   padding: 7em 0;

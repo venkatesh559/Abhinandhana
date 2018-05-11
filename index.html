@@ -379,6 +379,50 @@
 }
 </style>
 
+
+<script>
+
+
+var d = new Date();
+
+var startYear = 1998;
+
+var startMonth = 1;
+
+var startDay = 30;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+    var day = 0;month = 0;year = 0;
+    
+    var pday = d.getDate();
+    
+    if(pday>=startDay){
+        day = pday - startDay;
+     }
+     else day = pday;
+
+     var pmonth = d.getMonth()+1;
+     
+     if(pmonth>=startMonth){
+        month += pmonth - startMonth;
+        year+=1;
+     }
+     else month = pmonth;
+     
+     var pyear = d.getFullYear();
+     
+     
+     
+     if(pyear>=startYear){
+        year += pyear - startYear-1;
+     }
+     
+     document.getElementById('demo').innerHTML = year + " Years " + month + " Months "+ day + " Days "+"EXCELLENCE"
+     
+}, 1000);
+</script>
+
 	</head>
 	<body>
   
@@ -431,19 +475,18 @@
                 <div class="item active">
 
                     <!-- Slide Background -->
-                    <img src="assets/images/slide-1.jpg" alt="image"  class="slide-image"/>
+                    <img src="assets/images/gifslide.gif" alt="image"  class="slide-image"/>
                     <div class="bs-slider-overlay"></div>
 
                     <div class="container">
                         <div class="row">
-                            <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_left">
 
-                                <h1 data-animation="animated zoomInRight">20 YEARS OF EXCELLENCE</h1>
+                                
 
-                                <h1 data-animation="animated zoomInRight">15 Branches in Andhrapradesh and Telangana</h1>
-                                 <a href="about.html"  class="btn btn-primary" data-animation="animated fadeInLeft">About Us</a>
-                                <a href="contact.html"   class="btn btn-primary" data-animation="animated fadeInRight">Contact US</a>
+
+                                
+                                 
 
                                 
                             </div>
@@ -460,10 +503,10 @@
                     <div class="bs-slider-overlay"></div>
                     <!-- Slide Text Layer -->
                     <div class="slide-text slide_style_center">
-                        <h1 data-animation="animated flipInX">We Strive Hard To Make  Your Product A Brand</h1>
-                        <p data-animation="animated lightSpeedIn" align="justify">We excel at integrated marketing, covering digital media, public relations, advertising, content marketing and more. We are strong media buyers and can maximize marketing dollars. We deliver results through a blend of on-target creative, media and audience selection, negotiated deals, and digital, public relations and content marketing.</p>
+                       
+                        <h1 data-animation="animated zoomInRight" id="demo"></h1>
                         <a href="about.html"  class="btn btn-primary" data-animation="animated fadeInLeft">About Us</a>
-                                <a href="contact.html"   class="btn btn-primary" data-animation="animated fadeInRight">Contact US</a>
+                        <a href="contact.html"   class="btn btn-primary" data-animation="animated fadeInRight">Contact US</a>
                     </div>
                 </div>
                 <!-- End of Slide -->
@@ -475,10 +518,10 @@
                     <img src="assets/images/slide-3.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
                     <div class="bs-slider-overlay"></div>
                     <!-- Slide Text Layer -->
-                    <div class="slide-text slide_style_right">
-                        <h1 data-animation="animated zoomInLeft">Reach The Heights</h1>
-                        <h1 data-animation="animated fadeInRight">Of Limitless Sucess With Our Abhinandana</h1>
+                    <div class="slide-text slide_style_center">
+                       <h1 data-animation="animated zoomInLeft" style="font-weight: 200px ">The more informative your advertising, the more persuasive it will be.</h1>
                         
+
                     </div>
                 </div>
                 <!-- End of Slide -->
@@ -508,7 +551,7 @@
     </section>
     <!-- END section -->
     
-
+    >
     <section class="probootstrap_section" id="section-feature-testimonial">
       <div class="container">
         <div class="row justify-content-center mb-5">

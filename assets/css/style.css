@@ -300,7 +300,7 @@ a {
   .probootstrap-section-half .probootstrap-text {
     background: #ECECEC; }
     .probootstrap-section-half .probootstrap-text .probootstrap-inner {
-      padding: 7em; }
+      padding: 4em; }
       @media (max-width: 991px) {
         .probootstrap-section-half .probootstrap-text .probootstrap-inner {
           padding: 3em; } }

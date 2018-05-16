@@ -24,6 +24,60 @@
 
     <link rel="stylesheet" href="assets/css/helpers.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmZEHqOIly0SdMg2aBEzXZKx2BFw7k8V4"></script>
+    <script type="text/javascript">
+        var locations = [
+            ['Administrative Office (Nidadavole), # 2-11- 1E, Ganesh Chowk, West Godavari District,Phone:08813-222488, 224488', 16.901621, 81.663780, 1],
+            ['Corporate Office (Vijayawada),  # D.No.29-13- 13, Flat No.301, 3rd Floor, Sadguru Vilas, Opp.Central bank of India, Kaleswara Rao Road, Suraya Rao Peta, Vijayawada,', 16.5062, 80.6480, 2],
+            ['Hyderabad, 6-3- 1091/13 to 15, Flat No.305, Amrutha Ville Apts., Left Wing, Phone:040-23324456,      Mobile: 94914 84455/ 66 /77 /88 /99', 17.3850, 78.4867, 3],
+            ['Visakhapatnam , Flat No.G4, Navaratna Grand, KRM Colony, Visakhapatnam, Andhra Pradesh, India.   Phone: 0891-2561499,        Mobile:+91 94914 94488 / 94909 98448 / 49 / 50',17.6868, 83.2185, 4],
+            ['Tirupati , <p>#18-8- 41/C, Flat No-505, 5th Floor, Sri Vignesh Towers,Tirumala By-Pass Road, Near Leela Mahal Center, Tirupati, Andhra Pradesh, India.Phone:0877-2222520, Mobile:  +91 94914 74466 / 77 / 88', 13.6288, 79.4192, 5],
+            ['Nellore , # 15/37, 1st floor, C/o Rajaeswari Superspeciality Dental Hospital,Beside Tikkana Telephone Bhavan, Brundavanam, Nellore, Andhra Pradesh, India.phone:  0861-2354488,Mobile: +91 94914 74499 / 94915 74499', 14.4426, 79.9865, 6],
+            ['ONGOLE,#34-061- 067, Ground Floor, Beside Shanthinikathen English Medium School, Police Quarters Line, Kurnool Road, Ongole, Andhra Pradesh, India.Phone:  0859-2283436 , Mobile: +91 94914 14422 / 33', 15.5057, 80.0499, 7],
+             ['Kurnool, 40/309-1, 1st Floor, pp.Bhagya Nagar Post Office, Kurnool, Andhra Pradesh, India.Mobile: +91 94914 84488', 15.8281, 78.0373, 8],
+           
+            ['Guntur , # 6-13- 36, 2nd Floor, 13/1, Arundel Pet, Opp. South Indian Shopping Mall Road, Guntur, Andhra Pradesh, India. Ph: 0863-2334487,Mobile:  +91 94914 34466 / 77 / 99', 16.3067,80.4365, 9],
+            ['Rajamahendravaram,Flat No.B-107, First Floor, Royal City, Opp.East Railway Station,Rajamahendravaram, Andhra Pradesh, India.Phone:  0883-2478822 Mobile:  +91 94914 94466 / 94909 98454 / 55', 17.0005, 81.8040, 10],
+            ['Kakinada,#B1, D.No.7-2- 6, Lakshmi Gayatri Apartment, Nageswara Rao Street,Near Kondayyapalem, Railway Gate, Kakinada, Andhra Pradesh, India.Phone: 0884-2344465 ,Mobile:  +91 94914 94477', 16.9891, 82.2475, 11],
+            ['ELURU,#25-4- 28, 2nd Floor, Katta Subbarao Street, N.R.Pet,Eluru, Andhra Pradesh, India.Phone:  08812-253452,Mobile:  +91 94909 98452 /53', 16.7107, 81.0952, 12],
+            ['Bhimavaram,#Shop No. 7, Gunduvari Complex, Opp. Padmasri Reliance Super,Bhimavaram, Andhra Pradesh, India.Phone:  08816-239168,Mobile: +91 94909 98446 / 47', 16.5449, 81.5212, 13],
+            ['Tanuku,#20-1- 59, R.P.Road, Opp : Boys High School, Tanuku, Andhra Pradesh, India.Phone:  08819-226021,Mobile:  +91 94909 98445', 16.7572, 81.6800, 14],
+            ['Tadepalligudem,Opp. Fire Station, Ramarao Pet, Tadepalligudem, Andhra Pradesh, India.Phone: 08818-224044,Mobile:  +91 94909 98451, 94931 60170 ', 16.8138, 81.5212, 15],
+            
+
+
+
+
+
+        ];
+ 
+        function InitMap() {
+ 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: new google.maps.LatLng(16.901621, 81.663780),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+ 
+            var infowindow = new google.maps.InfoWindow();
+ 
+            var marker, i;
+ 
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+                });
+ 
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+        }
+    </script>
 
 <style type="text/css">
 
@@ -375,17 +429,14 @@
     .indicators-line > .carousel-indicators{
         display: none;
     }
-
+   
 }
 </style>
 
-
-<script>
-
-
+<script type="text/javascript">
 var d = new Date();
 
-var startYear = 1998;
+var startYear = 1996;
 
 var startMonth = 1;
 
@@ -423,8 +474,49 @@ var x = setInterval(function() {
 }, 1000);
 </script>
 
+<style type="text/css">
+    .to-top {
+  padding: 20px;
+  /*background-color: #bdc3c7;*/
+  background-color: rgb(0,0,0,0.2);
+  width: 60px;
+  height: 60px;
+  border-radius: 60;
+  float: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 100px;
+  margin-bottom: 25px;
+  opacity: 1;
+  
+  transition: all .8s ease;
+}
+.to-top:hover {
+  box-shadow: 0 0 10px #333;
+}
+.to-top:before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+    width: 0; 
+    height: 0; 
+  position: relative;
+  right: 4px;
+  bottom: 2px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    
+    border-bottom: 20px solid #16a085;
+
+}
+
+
+
+</style>
+
 	</head>
-	<body>
+	<body onload="InitMap();">
   
 
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar" id="probootstrap-navbar">
@@ -437,15 +529,15 @@ var x = setInterval(function() {
         </button>
         <div class="collapse navbar-collapse" id="probootstrap-menu">
           <ul class="navbar-nav ml-auto" >
-            <li class="nav-item active"><a class="nav-link" href="index.html" >Home</a></li>
+            <li class="nav-item "><a class="nav-link " href="#section-home" >Home</a></li>
 
-            <li class="nav-item"><a class="nav-link" href="ceo.html">ceo</a></li>            
-            <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>            
-            <li class="nav-item"><a class="nav-link" href="portfolio.html">portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="clients.html">clients</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-            <!--      <li class="nav-item"><a class="nav-link" href="team.html">team</a></li>   -->           
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-ceo">ceo</a></li>            
+            <li class="nav-item"><a class="nav-link" href="#section-about">about</a></li>            
+            <li class="nav-item"><a class="nav-link" href="#section-portfolio">portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-clients">clients</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-services">Services</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#section-acheivement">ACHIEVEMENTS</a></li>            
+            <li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -458,7 +550,7 @@ var x = setInterval(function() {
     </section>
 
 
-   
+   <section id="section-home">
      <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
 
             <!-- Indicators -->
@@ -549,41 +641,118 @@ var x = setInterval(function() {
         </div>
       
     </section>
-    <!-- END section -->
-    
-    
-  <!--  <section class="probootstrap_section" id="section-feature-testimonial">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-12 text-center mb-5 probootstrap-animate">
-            <h2 class="display-4 border-bottom probootstrap-section-heading" align="justify-content-center">ABOUT US</h2>
-            <blockquote class="">
-              <p class="lead mb-4" align="justify">A full-service advertising company, Abhinandana Media Services is a one-stop shop that can deliver integrated advertising solutions at all consumer contact points. From billboard and hoarding advertisement to newspaper and magazine advertisement, the company offers superior resources in every discipline with strategic planning and creative development. The whole objective is to provide solutions that counts and delivers results that are value for money and creates a memorable brand experience for client’s customers. Today, the company is rated as one of the INS aqua-rated agency with a strong and vibrant presence in many parts of Telangana and Andhra Pradesh.</p>
-              
-            </blockquote>
 
-            <a href="about.html"  class="btn btn-primary" data-animation="animated fadeInLeft">more</a>
 
-          </div>
-        </div>
+
         
+
+
+<section class="probootstrap_section" id="section-ceo">
+    <div class="row text-center mb probootstrap-animate">
+        <div class="col-md-12">
+                    
+        </div>
+    </div>
+     
+      <div class="container">
+        
+        <div class="row text-center mb-5 probootstrap-animate"><div class="col-md-12">
+            
+  
+   
+
+            
+          </div>
+          <div>
+            
+          
+    <h1 class="col-md-12"><b>CHIEF EXECUTIVE OFFICER</b></h1>
+   
+ 
+          <p class="lead mb-4" align="justify" style="color: black">A full-service advertising company, Abhinandana Media Services is a one-stop shop that can deliver integrated advertising solutions at all consumer contact points. From billboard and hoarding advertisement to newspaper and magazine advertisement, the company offers superior resources in every discipline with strategic planning and creative development. The whole objective is to provide solutions that counts and delivers results that are value for money and creates a memorable brand experience for client’s customers. Today, the company is rated as one of the INS aqua-rated agency with a strong and vibrant presence in many parts of Telangana and Andhra Pradesh.</p> 
+       
+<img  style="width: 20%;height: auto; border-radius: 50%;" src="assets/images/ceo.jpg">  
+
+
+
+      
+
+          
+       <!--   <P class="lead mb-4" align="justify" style="color: black">Driven by a vision to market customer’s business with a big-picture perspective and develop a compelling and creative advertising campaign, the company looks to enhance brand awareness and establish a professional identity for customer’s business. At Abhinandana, we recognize that a great advertising campaign is more than just creative - it sells your product or service or business to your target audience. By catering to all of customer’s requirements in a professional manner, the company looks to create a partnership with clients to ensure all advertising and marketing needs are met.
+
+The consistent success of the company is driven by a team of skilled advertising professionals who know advertising and who pool their expertise together and find attention-getting ideas and solutions that leads to amazing results.
+
+Moving forward, we look to continue to generate compelling, focused and well researched advertising campaigns which are tightly focused on the target audience for maximum return on investment.</p>-->
+
+
+      </div></div>
+        </div>
+
+
+      
+</section>
+
+ 
+    <!-- END section -->
+
+    
+    
+    <section class="probootstrap-section-half d-md-flex" id="section-about">
+
+
+      <div class="probootstrap-inner probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(assets/images/vision.jpg)"></div>
+      <div class="probootstrap-text">
+        <div class="probootstrap-inner probootstrap-animate" data-animate-effect="fadeInRight">
+          <h2 class="heading mb-4" style="color: #000080" ;><b>VISION</b></h2>
+          <p class="lead mb-4" align="justify " style="color: black">To position ourselves as a customer-focused company that remains dedicated to providing our clients with results-oriented advertising, and total marketing support that benefit our clients.</p>
+
+
+
+          
+        </div>
       </div>
     </section>
-    
 
 
-    <section class="probootstrap_section" id="section-city-guides">
+    <section class="probootstrap-section-half d-md-flex">
+      <div class="probootstrap-image order-2 probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(assets/images/mission.jpg)"></div>
+      <div class="probootstrap-text order-1">
+        <div class="probootstrap-inner probootstrap-animate" data-animate-effect="fadeInLeft">
+          <h2 class="heading mb-4" style="color: #000080"><b>MISSION</b></h2>
+          <p class="lead mb-4" align="justify" style="color: black">To provide consistent results-oriented solutions and continually promote quality improvement, and excellence in all phases of business, in accordance with the highest standards of quality and efficiency.</p>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="probootstrap-section-half d-md-flex">
+      <div class="probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(assets/images/strengths.png)"></div>
+      <div class="probootstrap-text">
+        <div class="probootstrap-inner probootstrap-animate" data-animate-effect="fadeInRight">
+          <h2 class="heading mb-4" style="color: #000080"><b>STRENGTHS</b></h2>
+          <p class="lead mb-4" align="justify" style="color: black">Our strength lies in creating value by using that power to build connections between clients and their audiences.Though we take time to understand your business culture and requirements,we ensure that we undertake all steps to realize your requirements while you can focus on the business.</p>
+             
+
+
+          
+        </div>
+      </div>
+    </section></section>
+
+
+
+
+
+        <section class="probootstrap_section" id="section-portfolio">
       <div class="container">
         <div class="row text-center mb-5 probootstrap-animate">
-          <div class="col-md-12">
-            <h2 class="display-4 border-bottom probootstrap-section-heading">OUR WORKS</h2>
-            <a href="portfolio.html">MORE</a>
-          
-            </div>
+          <div class="col-md-12  mx-auto">
+            <h2 class="display-4 border-bottom probootstrap-section-heading">PORTFOLIO</h2>
+          </div>
         </div>
-        <div class="row">
+        <div class="row mb-4">
           <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
-            <a href="#" class="probootstrap-thumbnail">
+            <a href="" class="probootstrap-thumbnail">
               <img src="assets/images/port/01.jpg"  class="img-fluid">
               
             </a>
@@ -602,209 +771,1410 @@ var x = setInterval(function() {
           </div>
           <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
             <a href="#" class="probootstrap-thumbnail">
-              <img src="assets/images/port/04.jpg"  class="img-fluid">
+              <img  src="assets/images/port/04.jpg"  class="img-fluid">
               
             </a>
           </div>
         </div>
 
-      </div>
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/05.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/06.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/07.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img   src="assets/images/port/08.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/09.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/10.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/11.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img   src="assets/images/port/12.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/13.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/14.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/15.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/16.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/21.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/22.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/23.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/24.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/25.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/26.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/27.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/28.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/29.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/30.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/31.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/32.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/33.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/34.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/35.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/36.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/37.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/38.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/39.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/40.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4=">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/41.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/42.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/43.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/44.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/45.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/46.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/47.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/48.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/49.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/50.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/51.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/52.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/53.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/54.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/55.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/56.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/57.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/58.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/59.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/60.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/61.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/62.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/63.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/64.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/65.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/66.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/67.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/68.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/69.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/70.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/71.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img  src="assets/images/port/72.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/73.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/74.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/port/75.jpg"  class="img-fluid">
+              
+            </a>
+          </div>
+          
+        </div>
+
+
+
+        
+
+       
 
     </section>
 
-    
-  
 
-    
-    
-    <section class="probootstrap_section bg-light">
-      <div class="container">
-        <div class="row text-center mb-5 probootstrap-animate">
-          <div class="col-md-12">
-            <h2 class="display-4 border-bottom probootstrap-section-heading">Services</h2>
-            <a href="services.html">MORE</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-
-            <div class="media probootstrap-media d-flex align-items-stretch mb-4 probootstrap-animate">
-              
-              <div class="media-body">
-                <h5 class="mb-3">NEWS PAPER / MAGAZINE ADVERTISEMENT</h5>
-                <p align="justify">Despite the onslaught of online media,thousands of people still continue to read newspapers daily.The reading habit trend does not show any signs of decline and instead seems to be growing higher up.This is what makes newspaper/magazine an attractive choice for reaching the largest collection of people.A well-conceived powerful advertising campaign in regional newspapers with the right words and design layout has the power to target targeted geographic audience and influence them instantly.</p>
-
-
-</p>          </div>
-            </div>
-
-            
-
-          </div>
-          <div class="col-md-6">
-            
-            <div class="media probootstrap-media d-flex align-items-stretch mb-4 probootstrap-animate">
-              <div class="media-body">
-                <h5 class="mb-3">TELEVISION / RADIO ADVERTISEMENT</h5>
-                <p align="justify">The great and unique thing about Television & Radio advertising is that you can target an audience which isn’t actively looking for your product or service, but you still get to attract their attention.
-
-A creative television and radio advertisement can achieve great results, provided the message is up-to-date and consistent. Further they are very efficient for they rely heavily on the fact that the audience is actively looking for your product or service.
-</p>          </div>
-            </div>
-
-            
-
-          </div>
-          <div class="row">
-          <div class="col-md-6">
-
-            <div class="media probootstrap-media d-flex align-items-stretch mb-4 probootstrap-animate">
-              
-              <div class="media-body">
-                <h5 class="mb-3">TRANSIT MEDIA ADVERTISEMENT</h5>
-                <p align="justify">To reach out to everybody that matters , Transit advertising is the way to go .
-
-Described as placement of print ads on buses and other vehicles and in bus shelters and train stations , it has proved to be an effective advertising medium for reaching an audience of all ages , backgrounds and incomes . This way the advertisement reaches families and professionals in their vehicles , people shopping around or students walking around the campus and above all , tourists finding their way around the city.</p>
-
-
-</p>          </div>
-            </div>
-
-            
-
-          </div>
-          <div class="col-md-6">
-            
-            <div class="media probootstrap-media d-flex align-items-stretch mb-4 probootstrap-animate">
-              <div class="media-body">
-                <h5 class="mb-3">BILLBOARD / HOARDING ADVERTISEMENT</h5>
-                <p align="justify">Billboard Advertising is an excellent way to gain visibility for your product/service or business profile and attract new customers.What better way can there be than reaching your customers when they are out and about with targeted roadside billboard/hoarding advertising.Abhinandana Media Services provides high-class billboard/hoarding advertising services that are innovative,powerful and cost-effective,using well designed and perfectly placed advertising.This in turn will help popularize the utility value or benefits of your product,service and connect your business with new as well as existing customers.</p></div>
-            </div>
-
-            
-
-          </div>
-        </div>
-      </div>
-    </section>
-    
-
-    
-
-    
-
-    <section class="probootstrap_section">
+    <section class="probootstrap_section" id="section-clients">
       <div class="container">
         <div class="row text-center mb-5 probootstrap-animate">
           <div class="col-md-12">
             <h2 class="display-4 border-bottom probootstrap-section-heading">OUR CLIENTS</h2>
-            <a href="clients.html">MORE</a>
-            
           </div>
         </div>
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/01.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/02.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/03.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/04.png"   class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+
+
+        <div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/05.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/06.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/07.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/08.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/09.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/10.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/11.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/12.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/13.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/14.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/15.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/16.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/17.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/18.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/19.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/20.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/21.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/22.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/23.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/24.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/25.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/26.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/27.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/28.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/29.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/30.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/31.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/32.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/33.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/34.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/35.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/41.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/42.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/43.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/44.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/45.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/46.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/47.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/48.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/49.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/50.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/51.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/52.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/53.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/54.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/55.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/56.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/57.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/58.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/59.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/60.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/61.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/62.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/63.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/75.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/64.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/65.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/66.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/67.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/68.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/69.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/70.png" class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/71.png"  class="img-fluid">
+              
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/72.png"  class="img-fluid">
+              
+            </a>
+          </div>
+        </div>
+<div class="row mb-4">
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/73.png" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
+            <a href="#" class="probootstrap-thumbnail">
+              <img src="assets/images/clients/74.png" class="img-fluid">
+              
+            </a>
+          </div>
+          
+          
+        </div>
+            </section>
+
+
+
+
+
+
+ 
+      
+           
+
+  <section class="probootstrap_section" id="section-services">
+    
+      <img style="width: 100%;height: auto;" src="assets/images/services1.jpg">
+      <div class="container">
         
-        <div class="row probootstrap-animate">
+        <div class="row text-center mb-5 probootstrap-animate">
           <div class="col-md-12">
-            <div class="owl-carousel js-owl-carousel-2">
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/54.png"  class="img-fluid">
-                  
-                </div>
-              </div>
-              
+            <h3 class=" border-bottom probootstrap-section-heading">NEWSPAPER / MAGAZINE ADVERTISEMENT</h3>
+          
+       
+ <p class="lead mb-4" align="justify">Despite the onslaught of online media, thousands of people still continue to read newspapers daily. The reading habit trend does not show any signs of decline and instead seems to be growing higher up. This is what makes newspaper and magazine an attractive choice for reaching the largest collection of people.
 
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/06.png"  class="img-fluid">
-                  
-                </div>
-              </div>
-              
+A well-conceived powerful advertising campaign in regional newspapers with the right words and design layout has the power to target targeted geographic audience and influence them instantly. Further, print advertising offers a fast turnaround in a country like India and enables you to have the advertisement you want, in the section you want, within a few days.
 
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/26.png"  class="img-fluid">
-                  
-                </div>
-              </div>
-              
-
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/08.png"  class="img-fluid">
-                  
-                </div>
-              </div>
+Abhinandana Media Services with its holistic approach and fully integrated capabilities, provides a range of quality newspaper / magazine advertisement solutions. Our ability to understand consumer behaviors can help you design and implement targeted advertisements for readers of popular newspapers.
+</p>
 
 
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/25.png"  class="img-fluid">
-                  
-                </div>
-              </div>
-              
+      </div></div>
+        </div>
 
 
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/33.png"  class="img-fluid">
-                  
-                </div>
-              </div>
-               END slide item 
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h3 class="border-bottom probootstrap-section-heading">TELEVISION / RADIO ADVERTISEMENT</h3>
+         
+       
+ <p class="lead mb-4" align="justify">The great and unique thing about Television & Radio advertising is that you can target an audience which isn’t actively looking for your product or service, but you still get to attract their attention.
 
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/43.png"  class="img-fluid">
-                  
-                </div>
-              </div>
-              
+A creative television and radio advertisement can achieve great results, provided the message is up-to-date and consistent. Further they are very efficient for they rely heavily on the fact that the audience is actively looking for your product or service.
 
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/41.png"  class="img-fluid">
-                  
-                </div>
-              </div>
-              
+We at Abhinandana offer result-oriented innovative television and radio advertisement solutions that have seen the best results for our clients with a focused effort.
 
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/64.png"  class="img-fluid">
-                 
-                </div>
-              </div>
-              
-
-              <div>
-                <div class="media probootstrap-media d-block align-items-stretch mb-4 probootstrap-animate">
-                  <img src="assets/images/clients/13.png"  class="img-fluid">
-                  
-                </div>
-              </div>
+Whether you’re a nascent, unbranded start-up or an established organization looking to advertise your product / service in a television advertisement, then look to us. We can take your requirement and amplify it with your message to your targeted audience. The aim is to express the campaign intentions creatively and effectively, prompting customer’s reactions.</p>
              
+
+      </div> </div>
+        </div>
+
+
+
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h3 class=" border-bottom probootstrap-section-heading">TRANSIT MEDIA ADVERTISEMENT</h3>
+         
+
+          <p class="lead mb-4" align="justify">To reach out to everybody that matters, Transit advertising is the way to go.
+
+Described as placement of print ads on buses and other vehicles and in bus shelters and train stations, it has proved to be an effective advertising medium for reaching an audience of all ages, backgrounds and incomes. This way the advertisement reaches families and professionals in their vehicles, people shopping around or students walking around the campus and above all, tourists finding their way around the city.
+
+The greatest benefit of Transit Advertising is that you cannot ignore it nor can it be turned off like television. It reaches people driving and passengers no matter what they’re looking at or doing.
+
+With its large, colorful, innovative designs that demand attention, it offers flexibility of ad size and location while delivering a varied audience.
+
+Abhinandana Media Services provides a host of quality transit advertising services that will allow you to engage with audiences when they work, shop and play. Through creative and eye-catching advertisement design and content, our team will ensure large-scale opportunities for you to reach the right audience.
+
+If you plan on a transit advertisement, speak to us about placing an ad in a bus shelter or a moving bus or truck. We will ensure an advertisement that will use bright colors with simple ideas laced by a few words for effective advertising that will attract attention.</p>
+
+      </div> </div>
+        </div>
+       
+   <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h3 class=" border-bottom probootstrap-section-heading">BILLBOARD / HOARDING ADVERTISEMENT</h3>
+       
+        <p class="lead mb-4" align="justify">Billboard Advertising is an excellent way to gain visibility for your product / service or business profile and attract new customers. What better way can there be than reaching your customers when they are out and about with targeted roadside billboard / hoarding advertising.
+
+Abhinandana Media Services provides high-class billboard / hoarding advertising services that are innovative, powerful and cost-effective, using well designed and perfectly placed advertising. This in turn will help popularize the utility value or benefits of your product / service and connect your business with new as well as existing customers.
+
+If you’re looking to have a billboard / hoarding advertisement in a particular location, place or road, get in touch with our sales team who will then contact you to discuss your requirements.</p>
+
+
+      </div>
+       </div>
+        </div>
+
+
+
+        <section class="probootstrap_section" id="section-feature-testimonial">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-12 text-center mb-5 probootstrap-animate">
+           
+
+
+
+ <div class="row text-center mb-5 probootstrap-animate">
+   <div class="col-sm-4" style="background-color:">
+    
+  <h3 align="left">BRAND BUILDING</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Strategy</li>
+  <li class="list-group">Advertising</li>
+  <li class="list-group">Designing</li>
+  <li class="list-group">Media Planning &#038; Buying</li>
+  <li class="list-group">Social Media</li>
+</ul>
+
+</div>
+ <div class="col-sm-4" style="background-color:">
+    <div class="row text-center mb-5 probootstrap-animate">
+  <h3 align="left">ELECTRONIC MEDIA</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Television Commercials</li>
+  <li class="list-group">Radio Commercials</li>
+  <li class="list-group">Audio Visual Presentations</li>
+  <li class="list-group">Corporate Films</li>
+  <li class="list-group">3D Animation &#038; Visual Effects</li>
+</ul>
+</div>
+</div>
+ <div class="col-sm-4" style="background-color:">
+    <div class="row text-center mb-5 probootstrap-animate">
+  <h3 align="left">Print Media Production
+  </h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Newspaper</li>
+  <li class="list-group">Magzine</li>
+  <li class="list-group">Logo &#038; Mascot</li>
+  <li class="list-group">Illustrations &#038; Special Artwork</li>
+  <li class="list-group">Printing &#038; Allied Services</li>
+</ul>
+</div>
+</div>
+
+   </div>
+   <br/>
+
+    <div class="row">
+   <div class="col-sm-4" style="background-color:">
+    <div class=" text-center mb-5 probootstrap-animate">
+  <h3 align="left">Photography</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Advertising</li>
+  <li class="list-group">Commercial</li>
+  <li class="list-group">Industrial</li>
+  
+</ul>
+</div>
+</div>
+
+ <div class="col-sm-4 text-center mb-5 probootstrap-animate" style="background-color:">
+  <h3 align="left">PRESS MANAGEMENT</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Press Notes</li>
+  <li class="list-group">Press Releases</li>
+  <li class="list-group">Press Conferences</li>
+ 
+</ul>
+</div>
+
+ <div class="col-sm-4 text-center mb-5 probootstrap-animate" style="background-color:">
+  <h3 align="left">OUTDOOR MEDIA</h3>
+<ul class="list-group list-group-flush" align="left">
+  <li class="list-group">Hoardings</li>
+  <li class="list-group">Kiosks</li>
+  <li class="list-group">Bus Shelter</li>
+  <li class="list-group">Transit Ads</li>
+  
+</ul>
+</div>
+   </div>
+    </section>
+</section>
+
+<section class="probootstrap_section" id="section-acheivement">
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12  mx-auto ">
+            <h2 class="display-4 border-bottom probootstrap-section-heading">OUR ACHIEVEMENTS</h2>
+          </div>
+        </div></div>
+        
+    
+    
+    <section class="probootstrap-section-half d-md-flex">
+
+
+      <div class="probootstrap-inner probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(assets/images/ins.png)"></div>
+      <div class="probootstrap-text">
+        <div class="probootstrap-inner probootstrap-animate" data-animate-effect="fadeInRight">
+          <h2 class="heading mb-4" style="color: #000080" ;><b>INS</b></h2>
+          <p class="lead mb-4" align="justify " style="color: black">An advertising agency, often referred to as a creative agency, is a business dedicated to creating, planning, and handling advertising and sometimes other forms of promotion and marketing for its clients. An ad agency is generally independent from the client.  </p>
+
+
+
+          
+        </div>
+      </div>
+    </section>
+
+
+    </section>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    <section class="probootstrap_section" id="section-contact">
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h2 class="display-4 border-bottom probootstrap-section-heading">CONTACT</h2>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-lg-6 col-md-6 probootstrap-animate mb-3">
+            <h3>Administrative Office (Nidadavole)</h3>
+    <p> # 2-11- 1E, Ganesh Chowk, West Godavari District,<br>
+Nidadavole, Andhra Pradesh, India.</p>
+ <p><strong>Phone:</strong> 08813-222488, 224488</p>
+ <p><strong>Mobile:</strong> +91 94914 24422 / 33 /77 /88 /99</p>
+ <p><strong>E-mail:</strong> nidadavole@abhinandanaads.com</p>
+          </div>
+          <div class="col-lg-6 col-md-6 probootstrap-animate mb-3">
+            <h3>Corporate Office (Vijayawada)</h3>
+
+    
+<p> # D.No.29-13- 13, Flat No.301, 3rd Floor, Sadguru Vilas,<br>
+ Opp.Central bank of India, Kaleswara Rao Road,<br>
+ Suraya Rao Peta, Vijayawada, Andhra Pradesh, India.</p>
+ <p><strong>Phone:</strong> 0866-2436648 / 49</p>
+<p><strong>Mobile:</strong> +91 94914 14455 /66 /77 /88 /99</p>
+<p><strong>E-mail:</strong> vijayawada@abhinandanaads.com</p>
+          </div>
+          
+          <div class="row mb-4">
+
+          <div class=" col-lg-4 col-md-6 probootstrap-animate mb-3">
+            
+<hr/><h3>Hyderabad</h3>
+<p>6-3- 1091/13 to 15, Flat No.305, Amrutha Ville Apts., Left Wing,<br>
+ Opp.Yashoda Hospital, Rajbhavan Road, Somajiguda, Hyderabad, Telangana.</p>
+<p><strong>Phone:</strong> 040-23324456, Mobile: 94914 84455/ 66 /77 /88 /99</p>
+<p><strong>E-mail:</strong> hyderabad@abhinandanaads.com</p>
+
+          </div>
+
+
+
+          <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+            <hr/><h3>Visakhapatnam</h3>
+<p>Flat No.G4, Navaratna Grand, KRM Colony, Visakhapatnam, Andhra Pradesh, India.</p>
+<p><strong>Phone:</strong> 0891-2561499</p>
+<p><strong>Mobile:</strong> +91 94914 94488 / 94909 98448 / 49 / 50</p>
+<p><strong>E-mail:</strong> vizag@abhinandanaads.com</p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+           <hr/> <h3>Tirupati</h3> 
+<p>#18-8- 41/C, Flat No-505, 5th Floor, Sri Vignesh Towers, <br>
+Tirumala By-Pass Road, Near Leela Mahal Center, Tirupati, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 0877-2222520</p>
+<p><strong>Mobile: </strong> +91 94914 74466 / 77 / 88</p>
+<p><strong>E-mail: </strong> tirupati@abhinandanaads.com</p>
+          </div>
+
+          </div>
+
+
+          <div class="row mb-4"> 
+              <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+                
+              <hr/>  <h3>Nellore</h3>
+<p># 15/37, 1st floor, C/o Rajaeswari Superspeciality Dental Hospital,<br>
+Beside Tikkana Telephone Bhavan, Brundavanam, Nellore, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 0861-2354488</p>
+<p><strong>Mobile: </strong> +91 94914 74499 / 94915 74499</p>
+<p><strong>E-mail: </strong> nellore@abhinandanaads.com</p>
+
+              </div>
+
+
+
+              <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+                
+               <hr/> <h3>ONGOLE</h3> 
+<p>#34-061- 067, Ground Floor, Beside Shanthinikathen English Medium School,<br>
+ Police Quarters Line, Kurnool Road, Ongole, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 0859-2283436</p>
+<p><strong>Mobile: </strong> +91 94914 14422 / 33</p>
+<p><strong>E-mail: </strong> ongole@abhinandanaads.com</p>
+              </div>
+
+              <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+                
+              <hr/>  <h3>Kurnool</h3>
+<p>40/309-1, 1st Floor, pp.Bhagya Nagar Post Office, Kurnool, Andhra Pradesh, India.</p>
+<p><strong>Mobile: </strong> +91 94914 84488</p>
+<p><strong>E-mail: </strong> kurnool@abhinandanaads.com</p>
+              </div>
+          </div>
+
+
+
+          <div class="row mb-4">
+            
+            <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+             <hr/> <h3>Guntur</h3>
+<p># 6-13- 36, 2nd Floor, 13/1, Arundel Pet, Opp. South Indian Shopping Mall Road,<br>
+ Guntur, Andhra Pradesh, India.</p>
+ Ph: 0863-2334487,</p>
+<p><strong>Mobile: </strong> +91 94914 34466 / 77 / 99</p>
+<p><strong>E-mail: </strong> guntur@abhinandanaads.com</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
               
-              
+           <hr/>   <h3>Rajamahendravaram</h3>
+<p>Flat No.B-107, First Floor, Royal City, Opp.East Railway Station,
+Rajamahendravaram, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 0883-2478822</p>
+<p><strong>Mobile: </strong> +91 94914 94466 / 94909 98454 / 55</p>
+<p><strong>E-mail: </strong> rajahmundry@abhinandanaads.com</p>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+             <hr/> <h3>Kakinada</h3>
+<p>#B1, D.No.7-2- 6, Lakshmi Gayatri Apartment, Nageswara Rao Street,<br>
+Near Kondayyapalem, Railway Gate, Kakinada, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 0884-2344465</p>
+<p><strong>Mobile: </strong> +91 94914 94477</p>
+<p><strong>E-mail: </strong> kakinada@abhinandanaads.com</p>
             </div>
           </div>
+
+          <div class="row mb-4">
+            <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+            <hr/><h3>ELURU</h3>
+<p>#25-4- 28, 2nd Floor, Katta Subbarao Street, N.R.Pet,<br>
+Eluru, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 08812-253452</p>
+<p><strong>Mobile: </strong> +91 94909 98452 /53</p>
+<p><strong>E-mail: </strong> eluru@abhinandanaads.com</p>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+            <hr/>  <h3>Bhimavaram</h3>
+<p>#Shop No. 7, Gunduvari Complex, Opp. Padmasri Reliance Super,</p>
+Bhimavaram, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 08816-239168</p>
+<p><strong>Mobile: </strong> +91 94909 98446 / 47</p>
+<p><strong>E-mail: </strong> bhimavaram@abhinandanaads.com</p>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+            <hr/>  <h3>Tanuku</h3>
+<p>#20-1- 59, R.P.Road, Opp : Boys High School,<br>
+ Tanuku, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 08819-226021</p>
+<p><strong>Mobile: </strong> +91 94909 98445</p>
+<p>E-mail: tanuku@abhinandanaads.com</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 probootstrap-animate mb-3">
+           <hr/>   <h3>Tadepalligudem</h3>
+<p>Opp. Fire Station, Ramarao Pet, Tadepalligudem, Andhra Pradesh, India.</p>
+<p><strong>Phone: </strong> 08818-224044</p>
+<p><strong>Mobile: </strong> +91 94909 98451, 94931 60170 </p>
+<p><strong>E-mail : </strong> tadepalligudem@abhinandanaads.com</p>
+<p>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
         </div>
-        
-      </div>
-    </section>-->
-    <!-- END section -->
+      </section>
+
+
+      <section class="probootstrap_section">
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h2 class="display-4 border-bottom probootstrap-section-heading">OUR LOCATIONS</h2>
+          </div>
+        </div></div>
+    <div id="map" style="height: 500px; width: auto;">
+    </div></section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer class="probootstrap_section probootstrap-border-top">
+
       <div class="container">
         
     <div class="row wow fdeInUp">
       <div class="col-md-4 col-sm-4 col-xs-12"> 
        <nav class="bottom-nav">
           <ul>
-            <li><a href="Privacy.html">Privacy Policy</a></li>
-            <li><a href="Disclaimer.html">Disclaimer</a></li>
+            <li><a href="Privacy.html" target="blank">Privacy Policy</a></li>
+            <li><a href="Disclaimer.html" target="blank">Disclaimer</a></li>
             </ul>
         </nav>
       </div>
@@ -822,7 +2192,7 @@ Described as placement of print ads on buses and other vehicles and in bus shelt
           
        
           <a href="#"><i class="fa fa-instagram"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
         
       </div>
       <!--/powered by--> 
@@ -836,7 +2206,7 @@ Described as placement of print ads on buses and other vehicles and in bus shelt
         </div>
       </div>
     </footer>
-
+    <a id="toTop" href="#section-home"><div class="to-top"></div></a>
    
 
     
@@ -854,7 +2224,7 @@ Described as placement of print ads on buses and other vehicles and in bus shelt
 
     <script src="assets/js/main.js"></script>
 
-
+<script src="assets/js/scrolling-nav.js"></script>>
 
 
 
